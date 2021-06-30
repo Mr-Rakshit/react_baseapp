@@ -50,7 +50,7 @@ export default class MenuExampleInverted extends Component {
           onClick={this.handleItemClick}
         />
         </Link>
-        <Link to="/display" >
+        <Link to="/displaycont" >
         <Menu.Item
           name='Display'
           active={activeItem === 'messages'}
