@@ -76,7 +76,7 @@ export default function SignUpP() {
       window.alert("REG SUCCESFUL")
       console.log("REG SUCCESFUL")
 
-      history.push("/login")
+      history.push("/signin")
      }
   }
 

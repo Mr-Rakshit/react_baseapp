@@ -61,6 +61,35 @@ router.post('/signup',async (req, res) => {
     
 });
 
+//cards display
+router.get('/display',async (req, res) => {
+    windows.alert("hey")
+    try {
+        // const userExist= await User.inventory.find( {} )
+        
+        // if(userExist){
+        //    const user = {name:"",email:""}
+        //    user.name = userExist.first_name,
+        //    user.email = userExist.email
+           
+        //    user.map((curr) => {
+        //        const {first_name,email} = curr
+        //        windows.alert(first_name)
+        //        console.log(email)
+        //    })
+          
+
+           
+
+        //     return res.send(user)
+        // }
+        res.send("hey")
+    } catch(err) {                 // alternative to .catch(err => {console.log(err) })
+        console.log(err) 
+    }
+    
+});
+
 //login route
 router.post('/signin', async (req,res) => {
     try{
@@ -76,8 +105,8 @@ router.post('/signin', async (req,res) => {
         //console.log(userLogin)
         if(userLogin) {
             const isMatch = await bcrypt.compare(password, userLogin.password)
-            
-            token = await userLogin.generateAuthToken()
+
+            token = await jwt.sign({email:userLogin.email},process.env.SECRET_KEY)
             console.log(token)
 
             res.cookie("jwtoken", token, {
@@ -91,7 +120,7 @@ router.post('/signin', async (req,res) => {
                 res.json({message:"user Signin Successfully"})
             }
         }else {
-            res.status(400).json({error:"Invalid Creds"})
+            res.status(400).json({error:"Invalid Creds in else"})
         }
 
         
@@ -99,6 +128,7 @@ router.post('/signin', async (req,res) => {
 
     } catch (err) {
         console.log(err)
+        window.alert("hry")
     }
 })
 

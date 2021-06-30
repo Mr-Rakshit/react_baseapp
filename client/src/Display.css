@@ -1,0 +1,11 @@
+.Card{
+    margin-bottom: 50px;
+    color:red;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.Cardall{
+  display: grid;  
+  grid-template-columns: 1fr 1fr 1fr ;
+}

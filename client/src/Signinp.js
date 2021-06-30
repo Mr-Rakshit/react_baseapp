@@ -55,6 +55,8 @@ export default function SignIn() {
        email,password
       })
     })
+
+
    const data = res.json
   
    if(res.status == 400) {
