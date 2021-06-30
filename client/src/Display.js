@@ -3,12 +3,25 @@ import './Display.css'
 import { Card, Icon, Image,Grid } from 'semantic-ui-react'
 
 function CardExampleCard() {
-  const [data,setData] = useState('')
-  useEffect(()=>{
-    fetch("/display")
-    .then((result)=> result.json())
-    .then((data)=>window.alert(data),setData(data))
-  })
+  const [data,setData] = useState([])
+  useEffect(()=> {
+    async function fetchData() {
+      console.log("kuch hua?")
+       fetch('/display',{
+        headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+         }
+       })
+         .then((response) => response.json())
+         .then((json) => {
+            console.log("yaha hua");
+            console.log(json);
+            setData(json)
+       });
+     }
+    fetchData();
+   }, []);
   
 
 return (

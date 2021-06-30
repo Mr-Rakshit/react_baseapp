@@ -44,6 +44,7 @@ app.get('/signup', (req, res) => {
     res.send(`Hello Registration world from the server`);
 });
 
+
 app.listen(PORT, () => {
     console.log(`server is runnig at port no ${PORT}`);
 })

@@ -35,7 +35,7 @@ const HomepageHeading = ({ mobile }) => (
     <Image src="https://helpx.adobe.com/content/dam/help/en/after-effects/how-to/animated-bar-graphs/_jcr_content/main-pars/image/animated-bar-graphs_step-1_900x506.jpg" />
     <Header
       as='h1'
-      content="Assesments"
+      content="Assessments"
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',

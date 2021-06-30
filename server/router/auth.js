@@ -61,34 +61,20 @@ router.post('/signup',async (req, res) => {
     
 });
 
+
+
 //cards display
-router.get('/display',async (req, res) => {
-    windows.alert("hey")
+router.get('/display', async function (req, res) {
     try {
-        // const userExist= await User.inventory.find( {} )
-        
-        // if(userExist){
-        //    const user = {name:"",email:""}
-        //    user.name = userExist.first_name,
-        //    user.email = userExist.email
-           
-        //    user.map((curr) => {
-        //        const {first_name,email} = curr
-        //        windows.alert(first_name)
-        //        console.log(email)
-        //    })
-          
-
-           
-
-        //     return res.send(user)
-        // }
-        res.send("hey")
-    } catch(err) {                 // alternative to .catch(err => {console.log(err) })
-        console.log(err) 
-    }
-    
-});
+        const userExist= await User.find({})
+        console.log(userExist)
+        if(userExist){
+          res.send(userExist)
+        } 
+    } catch(err){
+        res.send(err)
+    } 
+  })
 
 //login route
 router.post('/signin', async (req,res) => {
