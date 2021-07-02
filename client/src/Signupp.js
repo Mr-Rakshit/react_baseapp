@@ -41,7 +41,7 @@ export default function SignUpP() {
   
   const history = useHistory()
   const [user, setUser] = useState({
-    first_name: "", last_name: "", email: "", password: ""
+    first_name: "", last_name: "", email: "", password: "",sevenmarks: "",eightmarks: "",ninemarks: "",tenmarks: "",elevenmarks: "",twelvemarks: "",collegepercent: ""
   })
   let name, value
 
@@ -54,8 +54,8 @@ export default function SignUpP() {
   }
   const PostData = async () => {
      
-
-     const {first_name,last_name,email,password} = user
+     window.alert("postdata")
+     const {first_name,last_name,email,password,sevenmarks,eightmarks,ninemarks,tenmarks,elevenmarks,twelvemarks,collegepercent} = user
 
      const res= await fetch("/signup" , {
        method:"POST",
@@ -63,7 +63,7 @@ export default function SignUpP() {
          "Content-Type" : "application/json"
        },
        body: JSON.stringify({
-        first_name,last_name,email,password
+        first_name,last_name,email,password,sevenmarks,eightmarks,ninemarks,tenmarks,elevenmarks,twelvemarks,collegepercent
        })
      })
 
@@ -76,7 +76,7 @@ export default function SignUpP() {
       window.alert("REG SUCCESFUL")
       console.log("REG SUCCESFUL")
 
-      history.push("/displaycont")
+      history.push("/display")
      }
   }
 
@@ -143,6 +143,97 @@ export default function SignUpP() {
                 id="password"
                 autoComplete="current-password"
                 value={user.password}
+                onChange={handleInputs}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="sevenmarks"
+                label="sevenmarks"
+                type="sevenmarks"
+                id="sevenmarks"
+                value={user.sevenmarks}
+                onChange={handleInputs}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="eightmarks"
+                label="eightmarks"
+                type="eightmarks"
+                id="eightmarks"
+                value={user.eightmarks}
+                onChange={handleInputs}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="ninemarks"
+                label="ninemarks"
+                type="ninmarks"
+                id="ninemarks"
+                value={user.ninemarks}
+                onChange={handleInputs}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="tenmarks"
+                label="tenmarks"
+                type="tenmarks"
+                id="tenmarks"
+                value={user.tenmarks}
+                onChange={handleInputs}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="elevenmarks"
+                label="elevenmarks"
+                type="elevenmarks"
+                id="elevenmarks"
+                value={user.elevenmarks}
+                onChange={handleInputs}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="twelvemarks"
+                label="twelvemarks"
+                type="twelvemarks"
+                id="twelvemarks"
+                value={user.twelvemarks}
+                onChange={handleInputs}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="collegepercent"
+                label="collegepercent"
+                type="collegepercent"
+                id="collegepercent"
+                value={user.collegepercent}
                 onChange={handleInputs}
               />
             </Grid>
